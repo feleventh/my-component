@@ -12,7 +12,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import Button from '@/components/Button.ts'; 
-import Input from '@/components/Input.vue'; 
+import Input from '@/components/input/input.ts'; 
 import Count from '@/components/Count.vue'; 
 @Component({
   components: {
