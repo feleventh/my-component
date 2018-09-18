@@ -3,7 +3,7 @@ import { VNode } from 'vue';
 import './Button.scss';
 
 @Component
-export default class HelloWorld extends Vue {
+export default class Button extends Vue {
   @Prop({default: 16}) 
   private fontSize!: number;
   @Prop() private handler!: (e: object) => void;

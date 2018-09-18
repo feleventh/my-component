@@ -1,7 +1,7 @@
 import { Component, Prop, Vue, Model, Emit } from 'vue-property-decorator';
 
 @Component
-export default class HelloWorld extends Vue {
+export default class Input extends Vue {
   @Prop() private label?: string;
   @Prop() private placeholder?: string;
   @Prop({default: 16}) private fontSize?: number;
