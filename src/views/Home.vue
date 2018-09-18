@@ -5,6 +5,7 @@
     <Input :fontSize="18" label="姓名" placeholder="请输入姓名" v-model="inputValue" />
     <p>输入的值为：{{inputValue}}</p>
     <Count @add-to-count="handleCount"></Count>
+    <Select label="水果" v-model="fruit" :options="fruits"></Select>  
   </div>
 </template>
 
@@ -13,10 +14,11 @@ import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import Button from '@/components/Button.ts'; 
 import Input from '@/components/input/Input.vue'; 
+import Select from '@/components/select/Select.vue';
 import Count from '@/components/Count.vue'; 
 @Component({
   components: {
-    HelloWorld, Button, Input, Count
+    HelloWorld, Button, Input, Count, Select
   },
 })
 export default class Home extends Vue {
@@ -25,6 +27,17 @@ export default class Home extends Vue {
     console.info('xx');
   }
   private inputValue: string = '';
+  private fruit: string = '';
+  private fruits = [
+    {
+      label: '苹果',
+      value: 'apple'
+    },
+    {
+      label: '香蕉',
+      value: 'banana'
+    }
+  ]
 
   handleCount(data: any) {
     console.log(data);
