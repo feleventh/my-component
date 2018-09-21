@@ -1,4 +1,4 @@
-import { Component, Prop, Vue, Model, Emit } from 'vue-property-decorator';
+import { Component, Prop, Vue, Model, Emit, Watch } from 'vue-property-decorator';
 interface option {
   label: string | number;
   value: string | number | boolean;
@@ -16,7 +16,12 @@ export default class Select extends Vue {
   emitInput(value: string) {}
   @Emit('change')
   emitChange(value: string) {}
-
+  @Watch('isFocus')
+  onFocusChange(val: boolean, oldVal: boolean) {
+    if (val) {
+      console.log(this.$refs['input-wrap'])
+    }
+  }
   private isFocus: boolean = false;
   
   private currentValue: string = this.value;
