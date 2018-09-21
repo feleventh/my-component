@@ -5,7 +5,7 @@
     <span v-if="label!==''" :style="{
       paddingRight: fontSize + 'px'
     }">{{label}}</span>
-    <div class="zc-input-wrap" :style="{}">
+    <div class="zc-input-wrap" :style="{}" ref="input-wrap">
       <input type="text" :placeholder="placeholder" :style="{
         fontSize: fontSize + 'px', 
         lineHeight: fontSize*2 + 'px'
