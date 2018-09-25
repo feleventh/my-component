@@ -12,10 +12,10 @@ export default class Select extends Vue {
 
   @Model('input', {type: String}) value!: string|number;
 
-  @Emit('input')
-  emitInput(value: string) {}
-  @Emit('change')
-  emitChange(value: string) {}
+  // @Emit('input')
+  // emitInput(value: string) {}
+  // @Emit('change')
+  // emitChange(value: string) {}
   private isFocus: boolean = false;
   private isShow: boolean = false;
   
