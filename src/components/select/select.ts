@@ -10,24 +10,27 @@ export default class Select extends Vue {
   @Prop({default: 16}) private fontSize?: number;
   @Prop() private options!: option[];
 
-  @Model('input', {type: String}) value!: string;
+  @Model('input', {type: String}) value!: string|number;
 
   @Emit('input')
   emitInput(value: string) {}
   @Emit('change')
   emitChange(value: string) {}
-  @Watch('isFocus')
-  onFocusChange(val: boolean, oldVal: boolean) {
-    if (val) {
-      console.log(this.$refs['input-wrap'])
-    }
-  }
   private isFocus: boolean = false;
+  private isShow: boolean = false;
   
-  private currentValue: string = this.value;
+  private currentValue: string|number = this.value;
 
-  handleInput() {
-    this.emitInput(this.currentValue)
-    this.emitChange(this.currentValue)
+  handleFocus() {
+    this.isFocus = true;
+    this.isShow = true;
+  }
+  handleBlur() {
+    this.isFocus = false;
+  }
+  handleSelect(value: string|number) {
+    this.currentValue = value
+    this.isShow = false;
+    this.isFocus = false;
   }
 }
